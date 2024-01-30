@@ -1,0 +1,65 @@
+@import '_variables.scss';
+@import '_mixins.scss';
+
+body {
+  position: relative;
+  margin: 0;
+  @include worksans400;
+  color: $blackColor;
+}
+
+.container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding-top: 100px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.container2 {
+  padding-top: 0;
+}
+
+
+.title-h1 {
+  font-size: 34px;
+  font-weight: 700;
+}
+
+
+.btn-outline {
+  display: block;
+  background-color: $whiteColor;
+  @include ubuntu500;
+  color: $primaryColor;
+  padding: 14px 24px;
+  border: 2px solid $primaryColor;
+  border-radius: 7px;
+  opacity: 1;
+  transition: background-color .3s ease-in-out,
+    border-color .3s ease-in-out,
+    color .3s ease-in-out,
+    opacity .3s ease-in-out;
+
+  &:focus {
+    background-color: $bgHoverOutlineBtn;
+    outline: none;
+  }
+
+  &:hover {
+    background-color: $bgHoverOutlineBtn;
+  }
+
+  &:active {
+    background-color: $bgActiveOutlineBtn;
+  }
+
+  &.disabled {
+    pointer-events: none;
+    cursor: default;
+    color: $grayColor5;
+    border-color: $grayColor5;
+    opacity: 0.5;
+    background: $whiteColor;
+  }
+}

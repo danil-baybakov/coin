@@ -1,0 +1,39 @@
+@import '_variables.scss';
+
+
+// Fonts
+// ################################
+@mixin roboto500 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+}
+
+@mixin ubuntu400 {
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 400;
+}
+
+@mixin ubuntu500 {
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 500;
+}
+
+@mixin worksans300 {
+    font-family: 'WorkSans', sans-serif;
+    font-weight: 300;
+}
+
+@mixin worksans400 {
+    font-family: 'WorkSans', sans-serif;
+    font-weight: 400;
+}
+
+@mixin worksans600 {
+    font-family: 'WorkSans', sans-serif;
+    font-weight: 600;
+}
+
+@mixin worksans700 {
+    font-family: 'WorkSans', sans-serif;
+    font-weight: 600;
+}

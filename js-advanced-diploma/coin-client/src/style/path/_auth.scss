@@ -1,0 +1,81 @@
+@import '_variables.scss';
+@import '_mixins.scss';
+
+.auth {
+    &__container {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    &__form {
+      &-title {
+        margin-bottom: 35px;
+      }
+
+      &-wrapper {
+        position: relative;
+        width: 500px;
+        border-radius: 50px;
+        padding: 50px 40px;
+        background-color: $whiteColor;
+      }
+
+      &-group {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        &-input {
+          position: relative;
+        }
+
+        &:not(:last-child) {
+          margin-bottom: 25px;
+        }
+
+        &:last-child {
+          position: relative;
+        }
+      }
+
+      &-error {
+        display: none;
+        position: absolute;
+        left: 5px;
+        top: 2px;
+        font-size: 10px;
+        color: $errorColor;
+
+        &-v2 {
+          top: calc(100% + 5px);
+        }
+      }
+
+      &-lable {
+        margin-right: 18px;
+      }
+
+      &-input {
+        width: 274px;
+        height: 44px;
+        border: 1px solid $grayColor5;
+      }
+
+      &-input.is-invalid {
+        border: 1px solid $errorColor;
+      }
+
+      &-input.is-invalid + .auth__form-error {
+        display: block;
+      }
+
+      &-btn.is-error + .auth__form-error.auth__form-error-v2 {
+        display: block;
+      }
+
+    }
+
+  }

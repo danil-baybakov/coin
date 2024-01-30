@@ -1,0 +1,5 @@
+ehthumbs.db
+Thumbs.db
+.DS_Store
+service/
+node_modules/

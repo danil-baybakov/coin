@@ -1,0 +1,81 @@
+html {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+div,
+form {
+  outline: none;
+}
+
+
+.link-reset {
+  margin: 0;
+  padding: 0;
+  color: inherit;
+  text-decoration: none;
+  line-height: initial;
+}
+
+.gap-reset {
+  padding: 0;
+  margin: 0;
+}
+
+.list-reset {
+  margin: 0;
+  padding: 0;
+  line-height: initial;
+  list-style: none;
+}
+
+
+.btn-reset {
+  box-sizing: border-box;
+  border: 0;
+  padding: 0;
+  border-radius: 0;
+  background: transparent;
+  appearance: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.input-reset {
+  border: none;
+  padding: 0;
+  margin: 0;
+  line-height: 0;
+  background-image: none;
+  background-color: transparent;
+  outline: none;
+  box-shadow: none;
+}
+
+.textarea-reset {
+  border: none;
+  overflow: auto;
+  outline: none;
+  box-shadow: none;
+  resize: none;
+}
+
+.address-reset {
+  all: initial
+}
