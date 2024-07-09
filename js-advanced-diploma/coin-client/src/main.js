@@ -1,46 +1,34 @@
 import 'babel-polyfill';
 import { el, setChildren } from 'redom';
-import {
-  authorization,
-  getAccounts,
-  getAccount,
-  createAccount,
-  transferFunds,
-  allCurrencies,
-  getListCurrencies,
-  currencyBuy,
-  getBanks,
-} from './js/server.js';
+import { switchPage } from './js/auxiliary.js';
+import { appSpinner } from './js/spinner.js';
+import { appMessage } from './js/message.js';
+import { domElement } from '../unit-test/summ.js';
 
+import './resource/choises/js/choices.min.js';
+import './resource/choises/css/choices.min.css';
+import './resource/swiper/css/swiper-bundle.min.css';
+import './resource/simplebar/css/simplebar.min.css';
 import './style/style.scss';
 
-const appHeader = el('header.header', { id: 'appHeader' });
-const appContainer = el('main.main', { id: 'appContainer' });
-const appFooter = el('footer.footer', { id: 'appFooter' });
-setChildren(document.body, appHeader, appContainer, appFooter);
-const token = localStorage.getItem('token');
+export const appHeader = el('header.header', { id: 'appHeader' });
+export const appContainer = el('main.main', { id: 'appContainer' });
+export const appFooter = el('footer.footer', { id: 'appFooter' });
 
-const pathName = location.pathname;
-const params = new URLSearchParams(location.search);
-console.log(pathName);
+console.log(domElement().outerHTML);
 
-if (pathName === '/' || pathName === '/login' || !token) {
-  import(`/src/js/auth.js`).then((pageModule) => {
-    history.pushState(null, '', '/login');
-    const container = document.querySelector('#appContainer');
-    container.innerHTML = '';
-    container.append(pageModule.render());
-  });
-} else if (pathName === '/accounts') {
-  import(`/src/js/user.js`).then((pageModule) => {
-    import(`/src/js/header.js`).then((pageModule) => {
-      const header = document.querySelector('#appHeader');
-      header.classList.add('is-visible');
-      header.innerHTML = '';
-      header.append(pageModule.render());
-    });
-    const container = document.querySelector('#appContainer');
-    container.innerHTML = '';
-    container.append(pageModule.render());
-  });
-}
+setChildren(
+  document.body,
+  appHeader,
+  appContainer,
+  appFooter,
+  appSpinner.element,
+  appMessage.element,
+);
+const token = sessionStorage.getItem('token');
+
+switchPage(token);
+
+// вешаем обработчик события измения активный записи истории браузера
+// для смены страницы
+window.addEventListener('popstate', () => switchPage(token));

@@ -11,19 +11,11 @@
     }
 
     &__form {
-      &-title {
-        margin-bottom: 35px;
-      }
-
-      &-wrapper {
-        position: relative;
-        width: 500px;
-        border-radius: 50px;
-        padding: 50px 40px;
-        background-color: $whiteColor;
-      }
+      display: grid;
+      grid-template-columns: 75px 300px;
 
       &-group {
+
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -32,26 +24,41 @@
           position: relative;
         }
 
-        &:not(:last-child) {
-          margin-bottom: 25px;
+        &:first-child {
+          margin-bottom: 35px;
+          justify-content: left;
+          grid-column: 2;
+        }
+
+        &:nth-child(2) {
+          margin-bottom: 28px;
+          justify-content: right;
+          grid-row: 2;
+          grid-column: span 2;
+        }
+
+        &:nth-child(3) {
+          margin-bottom: 27px;
+          justify-content: right;
+          grid-row: 3;
+          grid-column: span 2;
         }
 
         &:last-child {
-          position: relative;
+          justify-content: left;
+          grid-row: 4;
+          grid-column: 2;
         }
       }
 
-      &-error {
-        display: none;
-        position: absolute;
-        left: 5px;
-        top: 2px;
-        font-size: 10px;
-        color: $errorColor;
 
-        &-v2 {
-          top: calc(100% + 5px);
-        }
+      &-wrapper {
+        position: relative;
+        width: 500px;
+        border-radius: 50px;
+        margin-top: 65px;
+        padding: 50px 85px 50px 40px;
+        background-color: $grayColor7;
       }
 
       &-lable {
@@ -59,23 +66,162 @@
       }
 
       &-input {
-        width: 274px;
+        width: 300px;
         height: 44px;
-        border: 1px solid $grayColor5;
       }
 
-      &-input.is-invalid {
-        border: 1px solid $errorColor;
+      &-btn {
+        padding: 0;
+        width: 83px;
+        min-height: 48px;
+        height: 48px;
       }
 
-      &-input.is-invalid + .auth__form-error {
-        display: block;
+      &-btn.is-invalid {
+       outline: none;
       }
 
-      &-btn.is-error + .auth__form-error.auth__form-error-v2 {
-        display: block;
+      &-btn.is-success {
+        outline: none;
+       }
+
+      &-message.btn__message {
+        top: 120%;
+        left: 0;
+        transform: none;
       }
 
     }
+
+  }
+
+  //**************************************//
+  //************  1200 *******************//
+  //**************************************//
+  @media (max-width: 1200px) {
+
+  }
+
+  //**************************************//
+  //************  922 *******************//
+  //**************************************//
+  @media (max-width: 922px) {
+
+    .auth {
+      &__container {
+        height: auto;
+      }
+
+      &__form {
+
+        grid-template-columns: 75px minmax(75px, 1fr);
+
+        &-wrapper {
+          margin-top: 130px;
+          width: 450px;
+        }
+
+        &-input {
+          width: 100%;
+          &-wrapper {
+            flex-grow: 1;
+          }
+        }
+
+        &-lable {
+          width: 57px;
+        }
+
+      }
+    }
+
+  }
+
+
+  //**************************************//
+  //************  768 *******************//
+  //**************************************//
+  @media (max-width: 768px) {
+
+  }
+
+
+  //**************************************//
+  //************  576 *******************//
+  //**************************************//
+  @media (max-width: 576px) {
+
+    .auth {
+      background-color: $grayColor7;
+
+      &__container {
+        height: 100vh;
+        align-items: flex-start;
+      }
+
+      &__form {
+
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        &-group {
+          width: 100%;
+
+
+          &:first-child {
+            width: auto;
+            margin-bottom: 25px;
+          }
+
+          &:nth-child(2) {
+            justify-content: space-between;
+            margin-bottom: 18px;
+          }
+
+          &:nth-child(3) {
+            margin-bottom: 17px;
+          }
+
+          &:last-child {
+            width: auto;
+          }
+        }
+
+        &-wrapper {
+          width: 100%;
+          margin-top: 0;
+          border-radius: 0;
+          padding-left: 0;
+          padding-right: 0;
+        }
+
+        &-input {
+          width: 100%;
+          &-wrapper {
+            flex-grow: 1;
+          }
+        }
+
+        &-lable {
+          display: inline-block;
+          text-align: left;
+          margin-right: 0;
+          width: 65px;
+        }
+
+        &-btn {
+          min-width: 130px;
+        }
+
+      }
+    }
+
+  }
+
+  //**************************************//
+  //************  320 *******************//
+  //**************************************//
+  @media (max-width: 320px) {
 
   }

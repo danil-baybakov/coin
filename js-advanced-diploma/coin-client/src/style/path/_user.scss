@@ -2,5 +2,203 @@
 @import '_mixins.scss';
 
 .user {
+    &__container {
+        position: relative;
+    }
+
+    &__header {
+        display: flex;
+        flex-wrap: wrap;
+        padding-top: 43px;
+        padding-bottom: 50px;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-end;
+        background-color: white;
+    }
+
+    &__btn-svg {
+        width: 24px;
+        height: 24px;
+    }
+
+    &__choice {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        flex-wrap: wrap;
+
+        &-title {
+            margin-right: 45px;
+            padding-bottom: 5px;
+        }
+
+        &-wrapper {
+            min-width: 300px;
+            margin-right: 45px;
+        }
+    }
+
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 70px;
+        row-gap: 50px;
+    }
+
+    &__card {
+        padding: 22px;
+        border-radius: 9px;
+        background-color: $whiteColor;
+        @include card-box-shadow;
+
+        &-title {
+            margin-bottom: 9px;
+            @include roboto500;
+            font-size: 18px;
+            line-height: 22px;
+        }
+
+        &-price {
+            margin-bottom: 9px;
+            @include ubuntu400;
+            font-size: 14px;
+            line-height: 20px;
+        }
+
+        &-bottom {
+            &-content {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: self-end;
+
+                &-left {
+
+                    &-title {
+                        @include worksans700;
+                        font-size: 13px;
+                        line-height: 1;
+                        margin-bottom: -5px;
+                    }
+
+                    &-time {
+                        @include worksans400;
+                        font-size: 13px;
+                        line-height: 1;
+                    }
+                }
+            }
+        }
+
+    }
 
 }
+
+//**************************************//
+//************  1200 *******************//
+//**************************************//
+@media (max-width: 1200px) {
+    .user {
+        &__list {
+            grid-template-columns: repeat(2, 1fr);
+            column-gap: 30px;
+            row-gap: 10px;
+        }
+    }
+}
+
+//**************************************//
+//************  922 *******************//
+//**************************************//
+@media (max-width: 922px) {
+    .user {
+        &__header {
+            align-items: flex-start;
+            padding-top: 21px;
+            padding-bottom: 25px;
+        }
+
+        &__btn-svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        &__choice {
+            align-items: center;
+
+            &-title {
+                margin-right: 20px;
+                padding-bottom: 0;
+            }
+
+            &-wrapper {
+                min-width: 250px;
+                margin-right: 0;
+            }
+        }
+
+        &__card {
+
+            &-title {
+                font-size: 16px;
+                line-height: 20px;
+            }
+        }
+    }
+}
+
+//**************************************//
+//************  768 *******************//
+//**************************************//
+@media (max-width: 768px) {
+
+    .user {
+        &__list {
+            grid-template-columns: 1fr;
+        }
+
+        &__choice {
+            margin-bottom: 20px;
+        }
+    }
+
+}
+
+//**************************************//
+//************  576 *******************//
+//**************************************//
+@media (max-width: 576px) {
+
+    .user {
+
+        &__choice {
+            &-title {
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+            margin-bottom: 20px;
+        }
+    }
+
+
+}
+
+//**************************************//
+//************  320 *******************//
+//**************************************//
+@media (max-width: 320px) {
+    .user {
+
+        &__card {
+
+            &-title {
+                font-size: 14px;
+            }
+        }
+    }
+
+}
+
+
+

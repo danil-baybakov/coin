@@ -1,3 +1,6 @@
+/* eslint-disable jest/expect-expect */
+/* eslint-disable prettier/prettier */
+/* eslint-disable no-undef */
 /// <reference types="cypress" />
 
 // Welcome to Cypress!

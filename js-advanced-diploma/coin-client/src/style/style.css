@@ -1,0 +1,274 @@
+html {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+div,
+form {
+  outline: none;
+}
+
+.link-reset {
+  margin: 0;
+  padding: 0;
+  color: inherit;
+  text-decoration: none;
+  line-height: initial;
+}
+
+.gap-reset {
+  padding: 0;
+  margin: 0;
+}
+
+.list-reset {
+  margin: 0;
+  padding: 0;
+  line-height: initial;
+  list-style: none;
+}
+
+.btn-reset {
+  box-sizing: border-box;
+  border: 0;
+  padding: 0;
+  border-radius: 0;
+  background: transparent;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.input-reset {
+  border: none;
+  padding: 0;
+  margin: 0;
+  line-height: 0;
+  background-image: none;
+  background-color: transparent;
+  outline: none;
+  box-shadow: none;
+}
+
+.textarea-reset {
+  border: none;
+  overflow: auto;
+  outline: none;
+  box-shadow: none;
+  resize: none;
+}
+
+.address-reset {
+  all: initial;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: local("Roboto-Medium"), url(../assets/fonts/Roboto/Roboto-Medium.woff) format("woff2"), url(../assets/fonts/Roboto/Roboto-Medium.woff) format("woff"), url(../assets/fonts/Roboto/Roboto-Medium.ttf) format("truetype"), url(../assets/fonts/Roboto/Roboto-Medium.eot) format("eot");
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Ubuntu";
+  src: local("Ubuntu-Regular"), url(../assets/fonts/Ubuntu/Ubuntu-Regular.woff2) format("woff2"), url(../assets/fonts/Ubuntu/Ubuntu-Regular.woff) format("woff"), url(../assets/fonts/Ubuntu/Ubuntu-Regular.ttf) format("truetype"), url(../assets/fonts/Ubuntu/Ubuntu-Regular.eot) format("eot");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Ubuntu";
+  src: local("Ubuntu-Medium"), url(../assets/fonts/Ubuntu/Ubuntu-Medium.woff2) format("woff2"), url(../assets/fonts/Ubuntu/Ubuntu-Medium.woff) format("woff"), url(../assets/fonts/Ubuntu/Ubuntu-Medium.ttf) format("truetype"), url(../assets/fonts/Ubuntu/Ubuntu-Medium.eot) format("eot");
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+}
+@font-face {
+  font-family: "WorkSans";
+  src: local("WorkSans-Light"), url(../assets/fonts/WorkSans/WorkSans-Light.woff2) format("woff2"), url(../assets/fonts/WorkSans/WorkSans-Light.woff) format("woff"), url(../assets/fonts/WorkSans/WorkSans-Light.ttf) format("truetype"), url(../assets/fonts/WorkSans/WorkSans-Light.eot) format("eot");
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+}
+@font-face {
+  font-family: "WorkSans";
+  src: local("WorkSans-Regular"), url(../assets/fonts/WorkSans/WorkSans-Regular.woff2) format("woff2"), url(../assets/fonts/WorkSans/WorkSans-Regular.woff) format("woff"), url(../assets/fonts/WorkSans/WorkSans-Regular.ttf) format("truetype"), url(../assets/fonts/WorkSans/WorkSans-Regular.eot) format("eot");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "WorkSans";
+  src: local("WorkSans-SemiBold"), url(../assets/fonts/WorkSans/WorkSans-SemiBold.woff2) format("woff2"), url(../assets/fonts/WorkSans/WorkSans-SemiBold.woff) format("woff"), url(../assets/fonts/WorkSans/WorkSans-SemiBold.ttf) format("truetype"), url(../assets/fonts/WorkSans/WorkSans-SemiBold.eot) format("eot");
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+}
+@font-face {
+  font-family: "WorkSans";
+  src: local("WorkSans-Bold"), url(../assets/fonts/WorkSans/WorkSans-Bold.woff2) format("woff2"), url(../assets/fonts/WorkSans/WorkSans-Bold.woff) format("woff"), url(../assets/fonts/WorkSans/WorkSans-Bold.ttf) format("truetype"), url(../assets/fonts/WorkSans/WorkSans-Bold.eot) format("eot");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+body {
+  position: relative;
+  margin: 0;
+  font-family: "WorkSans", sans-serif;
+  font-weight: 400;
+  color: #000000;
+}
+
+.container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding-top: 100px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.container2 {
+  padding-top: 0;
+}
+
+.title-h1 {
+  font-size: 34px;
+  font-weight: 700;
+}
+
+.btn-outline {
+  display: block;
+  background-color: #FFFFFF;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 500;
+  color: #116ACC;
+  padding: 14px 24px;
+  border: 2px solid #116ACC;
+  border-radius: 7px;
+  opacity: 1;
+  transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out, color 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+.btn-outline:focus {
+  background-color: #A0C3EB;
+  outline: none;
+}
+.btn-outline:hover {
+  background-color: #A0C3EB;
+}
+.btn-outline:active {
+  background-color: #CFE1F5;
+}
+.btn-outline.disabled {
+  pointer-events: none;
+  cursor: default;
+  color: #9CA3AF;
+  border-color: #9CA3AF;
+  opacity: 0.5;
+  background: #FFFFFF;
+}
+
+.header {
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100px;
+  background-color: #116ACC;
+}
+.header.is-visible {
+  display: block;
+}
+.header__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100px;
+}
+.header__nav {
+  display: block;
+}
+.header__nav-list {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.header__nav-item:not(:last-child) {
+  margin-right: 25px;
+}
+
+.auth__container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+.auth__form-title {
+  margin-bottom: 35px;
+}
+.auth__form-wrapper {
+  position: relative;
+  width: 500px;
+  border-radius: 50px;
+  padding: 50px 40px;
+  background-color: #FFFFFF;
+}
+.auth__form-group {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.auth__form-group-input {
+  position: relative;
+}
+.auth__form-group:not(:last-child) {
+  margin-bottom: 25px;
+}
+.auth__form-group:last-child {
+  position: relative;
+}
+.auth__form-error {
+  display: none;
+  position: absolute;
+  left: 5px;
+  top: 2px;
+  font-size: 10px;
+  color: #BA0000;
+}
+.auth__form-error-v2 {
+  top: calc(100% + 5px);
+}
+.auth__form-lable {
+  margin-right: 18px;
+}
+.auth__form-input {
+  width: 274px;
+  height: 44px;
+  border: 1px solid #9CA3AF;
+}
+.auth__form-input.is-invalid {
+  border: 1px solid #BA0000;
+}
+.auth__form-input.is-invalid + .auth__form-error {
+  display: block;
+}
+.auth__form-btn.is-error + .auth__form-error.auth__form-error-v2 {
+  display: block;
+}/*# sourceMappingURL=style.css.map */
