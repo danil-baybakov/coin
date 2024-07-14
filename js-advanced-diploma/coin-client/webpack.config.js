@@ -3,6 +3,9 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 // eslint-disable-next-line no-undef
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
+// Яндекс карты - ключ API
+const yamapsApiKey = 'caa404b6-b5cc-46f9-b6de-e82fd119baa6';
+
 // eslint-disable-next-line no-undef
 module.exports = (env) => ({
   entry: './src/main.js',
@@ -31,6 +34,10 @@ module.exports = (env) => ({
         type: 'asset/resource',
       },
       {
+        test: /\.css$/i,
+        use: ['style-loader', 'css-loader'],
+      },
+      {
         test: /\.scss$/i,
         use: [
           // Creates `style` nodes from JS strings
@@ -54,5 +61,12 @@ module.exports = (env) => ({
   devServer: {
     historyApiFallback: true,
     hot: true,
+  },
+  externalsType: 'script',
+  externals: {
+    ymaps3: [
+      `https://api-maps.yandex.ru/v3/?apikey=${yamapsApiKey}&lang=ru_RU`,
+      'ymaps3',
+    ],
   },
 });

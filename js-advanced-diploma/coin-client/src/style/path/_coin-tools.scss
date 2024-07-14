@@ -1,0 +1,364 @@
+@import '_variables.scss';
+@import '_mixins.scss';
+
+.coin {
+    &-tools {
+
+        &__grid {
+            display: grid;
+            grid-template-columns: minmax(577px, 1fr) minmax(300px, 703px);
+            gap: 49px;
+            row-gap: 44px;
+
+            &-item {
+                overflow: hidden;
+                padding: 50px;
+                border-radius: 50px;
+                @include card-box-shadow;
+
+                &:first-child {
+                    padding-right: 40px;
+                    height: 411px;
+                }
+
+                &:nth-child(2) {
+                    grid-row: span 2;
+                    padding-right: 40px;
+                    background-color: $grayColor7;
+                    box-shadow: none;
+                }
+
+                &:last-child {
+                    overflow: visible;
+                    min-height: 273px;
+                }
+            }
+        }
+    }
+
+    &-exchange {
+        position: relative;
+
+        &__title {
+            margin-bottom: 25px;
+        }
+
+        &__form {
+            display: grid;
+            grid-template-columns: 1fr 104px;
+            gap: 25px;
+
+            &-left {
+                min-height: 44px;
+
+                &-top {
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: space-between;
+                    width: 100%;
+
+                    .coin-exchange__form-group {
+                        display: flex;
+                        align-items: center;
+                    }
+
+                    .coin-exchange__form-lable {
+                        margin-right: 20px;
+                    }
+                }
+
+                &-bottom {
+                    display: flex;
+                    min-height: 44px;
+                    justify-content: space-between;
+                    width: 100%;
+
+                    .coin-exchange__form-group {
+                        width: 100%;
+                        display: flex;
+                        align-items: center;
+                    }
+
+                    .coin-exchange__form-lable {
+                        margin-right: 12px;
+                    }
+
+                }
+            }
+
+
+            &-right {
+                grid-row: span 2;
+            }
+
+            &-choice {
+                &-wrapper {
+                    width: 134px;
+                    height: 44px;
+                }
+            }
+
+            .custom-choice .choices__list--dropdown {
+                max-height: 152px;
+            }
+
+            .choices__list--dropdown, .choices__list[aria-expanded] {
+                overflow: visible;
+            }
+
+            .custom-choice .choices__list--dropdown .choices__list, .custom-choice .choices__list[aria-expanded] .choices__list {
+                max-height: auto;
+                overflow-x: visible;
+            }
+
+            .choices__list--dropdown .choices__list, .choices__list[aria-expanded] .choices__list {
+                overflow: visible;
+            }
+
+            .custom-choice .choices__inner {
+                display: flex;
+                align-items: center;
+                min-height: 44px;
+            }
+
+            .custom-choice .choices[data-type*=select-one]::after {
+                top: 50%;
+            }
+
+            &-input {
+                flex-grow: 1;
+                min-width: 104px;
+                height: 44px;
+            }
+
+            &-btn {
+                width: 104px;
+                height: 113px;
+            }
+        }
+
+
+        &__message {
+            &-group {
+                position: absolute;
+                top: calc(100% + 15px);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+            }
+            max-width: 400px;
+            text-align: center;
+        }
+
+    }
+}
+
+//**************************************//
+//************  1200 *******************//
+//**************************************//
+@media (max-width: 1200px) {
+
+    .coin {
+        &-tools {
+            &__grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 32px;
+                row-gap: 32px;
+            }
+        }
+
+
+        &-exchange {
+            &__form {
+                grid-template-columns: 1fr;
+                gap: 10px;
+
+                &-btn {
+                    width: 120px;
+                    height: 44px;
+                    margin-left: 60px;
+                }
+
+                &-input {
+                    min-width: auto;
+                }
+
+                &-lable {
+                    margin-right: 0;
+                }
+
+                &-choice {
+                    &-wrapper {
+                        width: auto;
+                        flex-grow: 1;
+                    }
+                }
+
+                &-left {
+                    &-top {
+                        flex-direction: column;
+
+                        .coin-exchange__form-group {
+                            width: 100%; ///
+                            justify-content: space-between;
+                        }
+
+                        .coin-exchange__form-group:not(:last-child) {
+                            margin-bottom: 10px;
+                        }
+
+                        .coin-exchange__form-lable {
+                            margin-right: 0; ///
+                            min-width: 50px;
+                            text-align: right;
+                            margin-right: 10px;
+                        }
+                    }
+
+                    &-bottom {
+
+                        .coin-exchange__form-lable {
+                            margin-right: 0; ///
+                            min-width: 50px;
+                            margin-right: 10px;
+                        }
+                    }
+                }
+
+                &-right {
+                    grid-row: 3;
+                }
+
+            }
+        }
+    }
+
+}
+
+//**************************************//
+//************  922 *******************//
+//**************************************//
+@media (max-width: 922px) {
+
+    .coin {
+        &-tools {
+
+            &__title {
+                padding-top: 25px;
+                padding-bottom: 30px;
+            }
+        }
+    }
+}
+
+//**************************************//
+//************  768 *******************//
+//**************************************//
+@media (max-width: 768px) {
+    .coin {
+        &-tools {
+
+            &__grid {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto;
+
+            &-item {
+
+                &:nth-child(2) {
+                    grid-row: 3;
+                    min-height: 700px;
+                }
+
+                &:last-child {
+                    grid-row: 1;
+                }
+            }
+
+            }
+        }
+
+        &-exchange {
+            max-width: 320px;
+            &__form {
+
+                &-left {
+                    &-top {
+                        max-width: 240px;
+                    }
+                }
+
+                &-input {
+                    width: 0px;
+                    min-width: 0px;
+                }
+
+            }
+
+            &__message {
+                &-group {
+                    top: 100%;
+                }
+            }
+        }
+
+    }
+
+
+}
+
+//**************************************//
+//************  576 *******************//
+//**************************************//
+@media (max-width: 576px) {
+    .coin {
+        &-tools {
+
+            &__grid {
+                gap: 24px;
+                // grid-template-columns: 1fr;
+                // grid-template-rows: auto;
+
+            &-item {
+
+                padding: 25px;
+                border-radius: 10px;
+
+                &:nth-child(2) {
+                    padding-right: 25px;
+                }
+
+                &:first-child {
+                    padding-right: 25px;
+                }
+            }
+
+            }
+        }
+
+        &-exchange {
+            max-width: none;
+            &__form {
+
+                &-left {
+                    &-top {
+                        max-width: none;
+                    }
+                }
+
+            }
+        }
+    }
+
+}
+
+//**************************************//
+//************  320 *******************//
+//**************************************//
+@media (max-width: 320px) {
+
+}
+
+
+
+
