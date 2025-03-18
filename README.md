@@ -9,7 +9,7 @@
 -   клонирование репозитория:
 
 ```bash
-git clone https://gitlab.skillbox.ru/daniil_baibakov/Js-advanced-diploma.git
+git clone https://github.com/danil-baybakov/coin.git
 ```
 
 -   запуск сервера:
